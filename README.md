@@ -1,30 +1,69 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NextJS
 
-## Getting Started
+- O que é o NextJS ?
 
-First, run the development server:
+  - NextJS é um framework para desenvolvimento front end web com React.
 
-```bash
-npm run dev
-# or
-yarn dev
+- O Porque o NextJS é um framework ?
+
+  - O Next adiciona varias funcionaliades em cima do **React** que vão deixar a aplicação React mais preparada para produção.
+
+- No que o NextJS é focado ?
+
+  - Performance e melhorar a indexação
+
+- O que ganhamos utilizando NextJs
+
+  - Utilizando NextJs nós temos o **server side rendering** onde colocamos uma camada a mais com o NodeJs onde ele vai ler nosso código javascript e montar a interface e irá retorna-la após ter carregado todo o HTML, CSS e JS.
+    <img src="./assets/next.png" alt="next.js">
+
+- O que o Next substitui ?
+  - Substitui o Create React APP.
+  - Não precisamos mais utilizar React Router Dom para fazer a configurações de rotas em nossa aplicação, basta criar dentro da pasta pages os arquivos de cada página.
+
+## Primeiros passos com NextJS.
+
+<br />
+<p> Rode o seguinte comando </p>
+
+```
+  yarn create next-app myapp
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ou
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```
+  npx create-next-app myapp
+```
 
-## Learn More
+Depois
 
-To learn more about Next.js, take a look at the following resources:
+```
+  cd myapp && yarn dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<p>Rotas</p>
+  
+  > Basta criar arquivos dentro da pasta **pages**.
+  Caso queira passar algum parametro na url, crie o arquivo no seguinte formato: [id].tsx ou [id].js caso não esteja utilizando typescript
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Diferença entre \_app e \_document
 
-## Deploy on Vercel
+- \_app
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  - Componente que fica em volta de todas as páginas e é renderizado apenas uma única vez.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- \_document
+  - Component que fica por volta da aplicação mas é renderizado a cada tela. Ele é responsavel por fazer o carregamento de todos os estilos css da nossa aplicação.
+
+### Como fazer requisições http com server side rendering
+
+Crie uma função chamada **getServerSideProps** como mostra a imagem a baixo:
+
+  <img src="./assets/getServerSideProps.png" alt="exemplo de requisição http com server side rendering"/>
+
+> Obs: Não precisamos utilizar essa função para todo tipo de requisição e sim quando a gente precisar acessa uma informação dinamica que precisa estar disponivel para os motores de busca.
+
+### Static site generator
+
+Utilizado parar criar páginas onde não é precisor ter muita atualização de dados que vem de uma API, exemplo a tela de um blog.
