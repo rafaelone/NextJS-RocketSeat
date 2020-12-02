@@ -1,9 +1,18 @@
 import { GetServerSideProps } from 'next';
+import { useCallback } from 'react';
 import { Title } from '../styles/pages/Home';
 
 //TTFB - TIME TO FIRST BITY
 
 export default function Home({ recommendedProducts }: IHomeProps) {
+ 
+  
+
+  const handleSum = useCallback(async() => {
+    const math = (await import('../lib/math')).default;
+    alert(math.sum(3,1))
+  }, [])
+ 
   return (
     <div>
       <section>
@@ -14,6 +23,7 @@ export default function Home({ recommendedProducts }: IHomeProps) {
           ))}
         </ul>
       </section>
+      <button type="button" onClick={handleSum}>Sum</button>
     </div>
   );
 }

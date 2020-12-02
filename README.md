@@ -66,4 +66,4 @@ Crie uma função chamada **getServerSideProps** como mostra a imagem a baixo:
 
 ### Static site generator
 
-Utilizado parar criar páginas onde não é precisor ter muita atualização de dados que vem de uma API, exemplo a tela de um blog.
+Utilizado parar criar páginas onde não é preciso ter muita atualização de dados que vem de uma API, exemplo a tela de um blog.

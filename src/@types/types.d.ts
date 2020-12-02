@@ -6,3 +6,12 @@ interface IProduct {
 interface IHomeProps {
   recommendedProducts: IProduct[];
 }
+
+
+interface ITop10Props {
+  products: IProduct[]
+}
+
+interface ICategoryProps {
+  products: IProduct[]
+}
